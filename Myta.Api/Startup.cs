@@ -31,7 +31,7 @@ namespace Myta.Api
             services.AddControllers();
 
             services.AddDomainServices();
-            services.AddInfrastructureServices();
+            services.AddInfrastructureServices(Configuration.GetConnectionString("SqlConnection"));
             services.AddServiceServices();
 
             services.AddSwaggerGen(c =>
