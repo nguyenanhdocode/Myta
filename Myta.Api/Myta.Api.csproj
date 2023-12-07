@@ -8,4 +8,14 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Myta.Domain\Myta.Domain.csproj" />
+    <ProjectReference Include="..\Myta.Infrastructure\Myta.Infrastructure.csproj" />
+    <ProjectReference Include="..\Myta.Service\Myta.Service.csproj" />
+  </ItemGroup>
+
 </Project>

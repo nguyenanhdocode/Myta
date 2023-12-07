@@ -7,13 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{B1ED40
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0FD6E366-A005-497B-B570-B982C7C15329}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Myta.Api", "Myta.Api\Myta.Api.csproj", "{851E58BC-549B-45A6-BE2E-024EB536882E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Myta.Api", "Myta.Api\Myta.Api.csproj", "{851E58BC-549B-45A6-BE2E-024EB536882E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Myta.Domain", "Myta.Domain\Myta.Domain.csproj", "{2C3C4A97-9616-4ECF-A2D8-2B9CDB2252A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Myta.Domain", "Myta.Domain\Myta.Domain.csproj", "{2C3C4A97-9616-4ECF-A2D8-2B9CDB2252A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Myta.Infrastructure", "Myta.Infrastructure\Myta.Infrastructure.csproj", "{F59D6C8A-E0AE-47CD-88A9-1C42A521528D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Myta.Infrastructure", "Myta.Infrastructure\Myta.Infrastructure.csproj", "{F59D6C8A-E0AE-47CD-88A9-1C42A521528D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Myta.Service", "Myta.Service\Myta.Service.csproj", "{BD1C72CC-BDCD-4838-8A14-783EC167D706}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Myta.Service", "Myta.Service\Myta.Service.csproj", "{BD1C72CC-BDCD-4838-8A14-783EC167D706}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
