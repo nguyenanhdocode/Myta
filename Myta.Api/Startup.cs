@@ -14,6 +14,10 @@ using System.Threading.Tasks;
 using Myta.Infrastructure;
 using Myta.Domain;
 using Myta.Service;
+using Microsoft.AspNetCore.Diagnostics;
+using Myta.Domain.Common;
+using Newtonsoft.Json;
+using System.Text;
 
 namespace Myta.Api
 {
@@ -40,14 +44,31 @@ namespace Myta.Api
             });
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env
+            , ILoggerFactory loggerFactory, ILogger<Startup> logger)
         {
+            loggerFactory.AddLog4Net();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Myta.Api v1"));
             }
+
+            app.UseExceptionHandler(c => c.Run(async (context) =>
+            {
+                var exception = context.Features
+                    .Get<IExceptionHandlerPathFeature>()
+                    .Error;
+
+                await Task.Factory.StartNew(() => logger.LogError(exception.StackTrace));
+
+                var response = new ErrorResult(ApiCodes.E500, exception.StackTrace);
+                var json = JsonConvert.SerializeObject(response);
+
+                context.Response.Redirect(string.Format("/api/error/error_500?exMessage={0}", exception.Message));
+            }));
 
             app.UseHttpsRedirection();
 

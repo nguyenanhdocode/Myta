@@ -9,6 +9,7 @@ namespace Myta.Domain.Common
     public enum ApiCodes
     {
         NONE,
-        INVALID_TOKEN
+        INVALID_TOKEN,
+        E500
     }
 }
